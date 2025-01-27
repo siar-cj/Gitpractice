@@ -12,7 +12,6 @@ pipeline {
                     sh """
                         echo \$ROOT_PASS | sudo -S bash -c '
                             rm -rf /opt/todoApp &&
-                            git clone https://github.com/siar-cj/todoApp /opt/todoApp &&
                             apt update -y &&
                             apt upgrade -y &&
                             apt install python3 python3-pip python3-venv python3-gunicorn -y
@@ -21,6 +20,8 @@ pipeline {
                 }
             }
         }
+
+	git stage--->
 
         stage('Creating Virtual Environment') {
             steps {
